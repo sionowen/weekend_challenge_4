@@ -92,7 +92,8 @@ $(document).on('ready', function(){
     event.preventDefault();
     taskComplete = {};
     taskComplete.id = task;
-
+    var confirmDelete = confirm('Are you sure you want to delete this task?');
+    if(confirmDelete){
     $.ajax({
       type: 'DELETE',
       url: '/tasks',
@@ -103,7 +104,7 @@ $(document).on('ready', function(){
 
     })
   }
-
+}
 
 
 })
